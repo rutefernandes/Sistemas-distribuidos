@@ -7,30 +7,29 @@ import java.util.Date;
  * @author Rute
  */
 public class Livro {
-    private long id;
+    private Long id;
     private String titulo;
     private String autor;
     private String editora;
-    private Date anoPublicacao;
     
+   // requisito da JAX-B 
     public Livro(){
         
     }
     
-    public Livro(long id, String titulo, String autor, String editora, Date anoPUblicacao){
+    public Livro(Long id, String titulo, String autor, String editora){
         super();
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
-        this.anoPublicacao = anoPublicacao;
     }
     
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     
@@ -57,12 +56,27 @@ public class Livro {
     public void setEditora(String Editora) {
         this.editora = Editora;
     }
-
-    public Date getAnoPublicacao() {
-        return anoPublicacao;
+    @Override
+    public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + ((id == null) ? 0 : id.hashCode());
+            return result;
     }
-
-    public void setAnoPublicacao(Date anoPublicacao) {
-        this.anoPublicacao = anoPublicacao;
+    @Override
+    public boolean equals(Object obj) {
+            if (this == obj)
+                    return true;
+            if (obj == null)
+                    return false;
+            if (getClass() != obj.getClass())
+                    return false;
+            Livro other = (Livro) obj;
+            if (id == null) {
+                    if (other.id != null)
+                            return false;
+            } else if (!id.equals(other.id))
+                    return false;
+            return true;
     }
 }

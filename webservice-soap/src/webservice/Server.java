@@ -5,8 +5,9 @@ import java.util.Date;
 import java.util.List;
 import javax.jws.WebService;
 import modelo.Livro;
+import publisher.Publisher;
 
-@WebService(endpointInterface = "IServer") 
+@WebService(endpointInterface = "webservice.IServer") 
 public class Server implements IServer{
     private bibliotecaDao bibliotecaDao = new bibliotecaDao();
             
@@ -16,8 +17,8 @@ public class Server implements IServer{
     }
 
     @Override
-    public void inserirLivro(long id, String titulo, String autor, String editora, Date anoPublicacao) {
-        bibliotecaDao.inserirLivro(id, titulo, autor, editora, anoPublicacao);
+    public void inserirLivro(String titulo, String autor, String editora) {
+        bibliotecaDao.inserirLivro(titulo, autor, editora);
     }
     
 }

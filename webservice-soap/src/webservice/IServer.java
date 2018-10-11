@@ -17,5 +17,5 @@ public interface IServer {
     public List<Livro> retornaLivros();
     
     @WebMethod
-    public void inserirLivro(long id, String titulo, String autor, String editora, Date anoPublicacao);
+    public void inserirLivro(String titulo, String autor, String editora);
 }

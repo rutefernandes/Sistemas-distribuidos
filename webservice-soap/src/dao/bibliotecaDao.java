@@ -12,8 +12,8 @@ import modelo.Livro;
  * @author rute
  */
 public class bibliotecaDao {
-    public static Long counter;
-    public static Map<Long, Livro> LIVROS = new LinkedHashMap<>();
+    private static Long counter;
+    private static Map<Long, Livro> LIVROS = new LinkedHashMap<>();
     
     public bibliotecaDao(){
         counter = 0L;
@@ -23,8 +23,8 @@ public class bibliotecaDao {
        return new ArrayList<>(LIVROS.values());
     }
     
-    public void inserirLivro(Long id,String titulo, String autor, String editora, Date anoPublicacao){
-        counter+=1;
-        LIVROS.put(counter, new Livro(counter, titulo, autor, editora, anoPublicacao));
+    public void inserirLivro(String titulo, String autor, String editora){
+        counter+=1L;
+        LIVROS.put(counter, new Livro(counter, titulo, autor, editora));
     }
 }
