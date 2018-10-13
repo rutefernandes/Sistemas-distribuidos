@@ -41,8 +41,8 @@ public class Controller {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-	public Pais updatePais(Pais country){
-		return pServico.updatePais(country);
+	public Pais updatePais(Pais pais){
+		return pServico.updatePais(pais);
 		
 	}
 	

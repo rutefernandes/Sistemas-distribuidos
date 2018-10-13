@@ -1,18 +1,19 @@
 import requests
 import json
 
+headers = { 'Content-Type': 'application/json'}
+payload = {'id': 1, 'nome': 'teste2', 'populacao': 1}
+url = 'http://localhost:8080/WSRestful/rest/paises/6'
 
-#put
-r = requests.put('http://localhost:8080/WSRestful/rest/paises/1', data = {'id': 1, 'nome': 'Argentina', 'populacao': 2})
+#GET
+#get = requests.get(url)
 
-#get
-reqg = requests.get('http://localhost:8080/WSRestful/rest/paises/1')
+#POST
+#post = requests.post(url, headers= headers, data=json.dumps(payload))
 
-#delete 
+#DELETE 
+#delete = requests.delete(url, headers= headers)
 
-#post
-#r = requests.post('http://127.0.0.1/api/v1/add_item', data = {'task':'Shopping'})
-
-
-json_data = json.loads(reqg.text)
-print(json_data)
+#PUT
+#put = requests.put(url, headers= headers, data=json.dumps(payload))
+#print(get.text)
